@@ -28,20 +28,19 @@ def print_instruction():
 	print_board([2,3,4,5,6,7,8,9,10])
 
 
-def get_input(turn):
-
+def get_input(user):
 	valid = False
 	while not valid:
 		try:
-			user = input("Where would you like to place " + turn + " (1-9)? ")
-			user = int(user)
-			if user >= 1 and user <= 9:
-				return user-1
+			tile_choice = input("Where would you like to place " + user + " (1-9)? ")
+			tile_choice = int(tile_choice)
+			if tile_choice >= 1 and tile_choice <= 9:
+				return tile_choice-1
 			else:
 				print("That is not a valid move! Please try again.\n")
 				print_instruction()
 		except Exception as e:
-			print(user + " is not a valid move! Please try again.\n")
+			print(tile_choice + " is not a valid move! Please try again.\n")
 
 def check_win(board):
 	win_cond = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
@@ -79,16 +78,16 @@ def main():
 		print_board(board)
 		print("Turn number " + str(move+1))
 		if move % 2 == 0:
-			turn = 'X'
+			user = 'X'
 		else:
-			turn = 'O'
+			user = 'O'
 
 		# get user input
-		user = get_input(turn)
-		while board[user] != -1:
+		tile_choice = get_input(user)
+		while board[tile_choice] != -1:
 			print("Invalid move! Cell already taken. Please try again.\n")
-			user = get_input(turn)
-		board[user] = 1 if turn == 'X' else 0
+			tile_choice = get_input(user)
+		board[tile_choice] = 1 if user == 'X' else 0
 
 		# advance move and check for end game
 		move += 1
