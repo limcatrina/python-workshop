@@ -5,11 +5,17 @@ Welcome to Notes for Python
 
 import helloworld as hw 
 from helloworld import * 	#import helloworld to use its functions immediately without having to use .
+# import helloworld
+# from helloword import hello_world
 
 # creating list 
 list1 = [0,1,2,3,4] #put 01234 into list 
 if list1[4] == list1[-1]  # "-1" means the last element in the list 
 	print("list has 4+1 elements")
+	elif
+	print("else if")
+	else
+	print("else")
 
 # adding element abc to the end of the list 
 list1.append("abc")
@@ -28,3 +34,6 @@ print list1
 
 for i in range(x): # create a list of ascending integers starting from 0 goes to x-1
 	print('cat is cat is cat is cat is cat')
+	
+ans = input("Your integer here") #always saved as string
+ans_integer = int(ans) #convert ans to integer 
