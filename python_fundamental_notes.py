@@ -1,6 +1,6 @@
 """
 Welcome to Notes for Python 
-
+# use "is" and "not" to compare if two variable pointers point to same data
 """
 
 import helloworld as hw 
